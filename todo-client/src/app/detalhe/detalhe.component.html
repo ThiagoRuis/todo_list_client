@@ -1,3 +1,9 @@
+<div *ngIf="messages.length > 0 ">
+  <div  class="alert alert-danger" role="alert" *ngFor="let message of messages">
+    {{ message }}
+  </div>
+</div>
+
 <div class="input-group mb-3">
   <label>ID:</label> {{task.id}}
 </div>
@@ -5,13 +11,13 @@
 
 <label>Titulo:</label>
 <div class="input-group mb-3">
-  <input [(ngModel)]="task.title" placeholder="Title" #title class="form-control" />
+  <input [(ngModel)]="task.title" placeholder="Title" #title class="form-control" required />
 </div>
 
 
 <label>Description:</label>
 <div class="input-group mb-3">
-  <textarea [(ngModel)]="task.description" placeholder="Description" class="form-control" > </textarea>
+  <textarea [(ngModel)]="task.description" placeholder="Description" class="form-control" required > </textarea>
 </div>
 
 

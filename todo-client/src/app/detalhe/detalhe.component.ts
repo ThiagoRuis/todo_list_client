@@ -11,6 +11,7 @@ import { TaskAPIService } from '../task-api.service';
 })
 export class DetalheComponent implements OnInit {
   @Input() task: Task;
+  messages = [];
 
   constructor(
     private route: ActivatedRoute,
@@ -43,7 +44,16 @@ export class DetalheComponent implements OnInit {
   }
 
   saveTask(): void {
-    if (this.task.id === null) {
+    this.messages = [];
+    if (this.task.title === '') {
+      this.messages.push('Campo faltando "Title"');
+    }
+
+    if (this.task.description == '') {
+      this.messages.push('Campo faltando "Description"');
+    }
+
+    if (this.task.id === null || this.task.id === undefined) {
       delete this.task.id;
       this.taskAPI.addTask(this.task)
         .subscribe(() => this.goBack());

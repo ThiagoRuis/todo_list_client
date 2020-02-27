@@ -38,6 +38,14 @@ export class TaskAPIService {
   }
 
   updateTask(task: Task): Observable<Task> {
+    if (task.deadline === '') {
+      task.deadline = null;
+    }
+
+    if (task.completed_at === '') {
+      task.completed_at = null;
+    }
+
     return this.http.put<Task>(`${this.apiUrl}${task.id}/`, task, this.httpOptions);
   }
 }
