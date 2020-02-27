@@ -1,3 +1,9 @@
 <ul class="list-group">
-  <li class="list-group-item" *ngFor="let task of tasks" routerLink="/detalhe/{{task.id}}">{{ task.title }}</li>
+  <li class="list-group-item" *ngFor="let task of tasks" >{{ task.title }}
+    <div class="btn-group" role="group" aria-label="Ações">
+      <button type="button" class="btn btn-success" (click)="concluirTarefa(task)">Concluir</button>
+      <button type="button" class="btn btn-primary" routerLink="/detalhe/{{task.id}}">Editar</button>
+      <button type="button" class="btn btn-danger" (click)="removerTarefa(task)" >Remover</button>
+    </div>
+  </li>
 </ul>

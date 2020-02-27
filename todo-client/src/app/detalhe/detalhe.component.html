@@ -1,6 +1,6 @@
 <div>
     <label>Titulo:
-      <input [(ngModel)]="task.title" placeholder="Title"/>
+      <input [(ngModel)]="task.title" placeholder="Title" #title/>
     </label>
 </div>
 
@@ -24,3 +24,7 @@
     <input [(ngModel)]="task.completed_at" placeholder="Completed at:"/>
   </label>
 </div>
+
+
+<button (click)="goBack()">Voltar</button>
+<button (click)="saveTask(title.value)">Salvar</button>
