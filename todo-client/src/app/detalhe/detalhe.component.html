@@ -1,0 +1,26 @@
+<div>
+    <label>Titulo:
+      <input [(ngModel)]="task.title" placeholder="Title"/>
+    </label>
+</div>
+
+<div>
+  <label>ID:</label>{{task.id}}
+</div>
+
+<div>
+  <label>Description:</label>
+  <textarea [(ngModel)]="task.description" placeholder="Description"> </textarea>
+</div>
+
+<div>
+  <label>Deadline:
+    <input [(ngModel)]="task.deadline" placeholder="Deadline"/>
+  </label>
+</div>
+
+<div>
+  <label>Completed at:
+    <input [(ngModel)]="task.completed_at" placeholder="Completed at:"/>
+  </label>
+</div>
