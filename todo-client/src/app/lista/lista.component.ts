@@ -26,11 +26,10 @@ export class ListaComponent implements OnInit {
   }
 
   concluirTarefa(task: Task): void {
-    this.taskAPI.completeTask(task.id).subscribe();
-    this.listaTarefas();
+    this.taskAPI.completeTask(task.id).subscribe(() => this.listaTarefas());
   }
 
   removerTarefa(task: Task): void {
-    this.taskAPI.deleteTask(task.id).subscribe(task => this.listaTarefas());
+    this.taskAPI.deleteTask(task.id).subscribe(() => this.listaTarefas());
   }
 }
